@@ -1,0 +1,10 @@
+.note-card {
+    height: 300px;
+    width: 300px;
+    background: lightblue;
+}
+
+.note {
+    display: flex;
+    flex-wrap: wrap;
+}
