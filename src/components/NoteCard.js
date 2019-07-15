@@ -6,6 +6,7 @@ const NoteCard = (props) => {
         props.songs.map((song) => (
             <div className="note-card">
                 {song.name}
+                {song.artist}
             </div>
         ))
     );

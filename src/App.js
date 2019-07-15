@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Note from './components/Note.js';
+import Notepad from './components/Notepad.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <Note />
+          <Notepad />
       </div>
     );
   }
