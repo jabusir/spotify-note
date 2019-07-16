@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import '../styles/searchbar.css';
 
+
 const createDebouncedFn = (fn) => {
     const debouncedFn = _.debounce(fn, 1000);
     return () => debouncedFn;

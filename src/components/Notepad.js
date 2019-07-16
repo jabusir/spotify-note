@@ -1,9 +1,10 @@
 import React from 'react';
-import NoteCard from './NoteCard';
-import '../styles/note-card.css'
 import Searchbar from './Searchbar';
+import { connect } from 'react-redux';
 
-export default class Note extends React.Component {
+import '../styles/note-card.css'
+
+class Notepad extends React.Component {
 
     state = {
         token: ''
@@ -33,3 +34,9 @@ export default class Note extends React.Component {
         );
     }
 }  
+
+const mapStateToProps = (state) => ({
+    tracks: state
+})
+
+export default connect(mapStateToProps)(Notepad);
