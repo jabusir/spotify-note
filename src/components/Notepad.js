@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import '../styles/note-card.css'
 
+
+
 class Notepad extends React.Component {
 
     state = {
@@ -30,6 +32,16 @@ class Notepad extends React.Component {
         return (
             <div>
                 <Searchbar token={this.state.token}/>
+                {
+                    this.props.tracks.map((track) => (
+                        <div className="">
+                        <img className="" src={track.image} height="100px" width="100px" alt="album"/>   
+                        <div className="">
+                            {track.name}
+                        </div>
+                    </div>
+                    ))
+                }
             </div>    
         );
     }
