@@ -1,7 +1,7 @@
 import database  from '../firebase/firebase';
 
 export const addTrackCard = (track) => ({
-    type: 'ADD_SONG',
+    type: 'ADD_TRACK',
     track
 })
 
@@ -21,6 +21,27 @@ export const startAddTrackCard = (trackData = {}) => {
               firebase_id: ref.key,
               ...track 
             }))
+        })
+    }
+}
+
+export const setTracks = (tracks) => ({
+    type: 'SET_TRACKS',
+    tracks
+})
+
+export const startSetTracks = () => {
+    return (dispatch) => {
+        return database.ref('tracks').once('value').then((snapshot) => {
+            const tracks = []
+
+            snapshot.forEach((childSnapshot) => {
+                tracks.push({
+                    ...childSnapshot.val()
+                })
+            })
+
+            dispatch(setTracks(tracks))
         })
     }
 }

@@ -8,3 +8,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.track-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.track-card {
+    width: 250px;
+    height: 250px;
+    background-color: purple;
+    border: solid blue 1px;
+    margin: 10px 25px;
+}

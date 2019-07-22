@@ -32,16 +32,19 @@ class Notepad extends React.Component {
         return (
             <div>
                 <Searchbar token={this.state.token}/>
-                {
-                    this.props.tracks.map((track) => (
-                        <div className="">
-                        <img className="" src={track.image} height="100px" width="100px" alt="album"/>   
-                        <div className="">
-                            {track.name}
+                <div className="track-cards-container">
+                    {
+                        this.props.tracks.map((track) => (
+                            <div className="track-card">
+                            <img className="track-image" src={track.image} height="100px" width="100px" alt="album"/>   
+                            <div className="track-name">
+                                {track.name}
+                            </div>
+                            <div>{track.artist}</div>
                         </div>
-                    </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>    
         );
     }
